@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo Fade In & Fade Out | Ciência e Prática</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Menu de Navegação -->
+    <header class="navbar">
+        <div class="logo">Fade<span>Lab</span></div>
+        <nav class="nav-links" id="navLinks">
+            <a href="#inicio">Início</a>
+            <a href="#conceito">Conceito</a>
+            <a href="#ciencia">Base Científica</a>
+            <a href="#simulador">Simulador Interativo</a>
+            <a href="#exemplos">Aplicações</a>
+            <a href="#referencias">Referências</a>
+        </nav>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Início / Hero -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>A Ciência por trás do Fade In e Fade Out</h1>
+            <p>Descubra como a transição suave de áudio e vídeo molda nossa percepção sensorial, cognitiva e cinematográfica.</p>
+            <a href="#simulador" class="btn-primary">Testar Simulador</a>
+        </div>
+    </section>
+
+    <!-- O Conceito -->
+    <section id="conceito" class="container">
+        <h2>O que são Fade In e Fade Out?</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Fade In</h3>
+                <p>Consiste no surgimento gradual de um sinal (seja áudio, aumentando do silêncio ao volume máximo, ou vídeo, transicionando do preto total para a imagem nítida). É o mecanismo de introdução que prepara os sentidos do espectador.</p>
+            </div>
+            <div class="card">
+                <h3>Fade Out</h3>
+                <p>É o oposto complementar: a diminuição gradual de um sinal até a ausência completa (silêncio total ou tela preta). Serve para finalizar cenas, encerrar músicas ou indicar fechamento de ciclos cognitivos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Base Científica -->
+    <section id="ciencia" class="bg-alt">
+        <div class="container">
+            <h2>Profundidade e Coerência Científica</h2>
+            <p class="subtitle">O impacto dos fades não é apenas estético; ele está enraizado na neurociência e na física.</p>
+            
+            <div class="science-grid">
+                <div class="science-item">
+                    <h4>Psicoacústica e Curvas Logarítmicas</h4>
+                    <p>O ouvido humano percebe o volume sonoro de forma logarítmica (escala decibel), e não linear. Um fade de áudio realista utiliza curvas exponenciais/logarítmicas para que a variação pareça linear ao cérebro, evitando saltos bruscos na audição.</p>
+                </div>
+                <div class="science-item">
+                    <h4>Adaptação Visual e Ritmo Cardíaco</h4>
+                    <p>Na óptica e neurociência cognitiva, transições suaves (como o fade para o preto) dão tempo para o córtex visual se adaptar à mudança de estímulo, evitando respostas de sobressalto (startle reflex) que ocorrem com cortes secos abruptos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simulador Interativo -->
+    <section id="simulador" class="container">
+        <h2>Simulador Interativo de Fade</h2>
+        <p>Ajuste os controles abaixo para testar o comportamento visual e sonoro de um Fade In/Out simulado em tempo real.</p>
+        
+        <div class="simulator-box">
+            <div class="screen-preview" id="screenPreview">
+                <span id="previewText">Visualização Ativa</span>
+            </div>
+            
+            <div class="controls-grid">
+                <div class="control-group">
+                    <label for="opacityRange">Opacidade (Fade Visual): <span id="opacityVal">100</span>%</label>
+                    <input type="range" id="opacityRange" min="0" max="100" value="100">
+                </div>
+                <div class="control-group">
+                    <label for="volumeRange">Volume (Fade Sonoro): <span id="volumeVal">100</span>%</label>
+                    <input type="range" id="volumeRange" min="0" max="100" value="100">
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="btnFadeIn" class="btn-action">Simular Fade In</button>
+                <button id="btnFadeOut" class="btn-action">Simular Fade Out</button>
+                <button id="btnReset" class="btn-secondary">Resetar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aplicações Práticas -->
+    <section id="exemplos" class="bg-alt">
+        <div class="container">
+            <h2>Exemplos de Aplicação no Mundo Real</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Cinema e TV</h3>
+                    <p>Usado no início de filmes (fade in a partir do preto) para sinalizar o início da narrativa e o desligamento do mundo real pelo espectador.</p>
+                </div>
+                <div class="card">
+                    <h3>Engenharia de Som</h3>
+                    <p>Aplicado em bordas de cortes de áudio (crossfades) para eliminar estalos elétricos e transições secas indesejadas (clicks and pops).</p>
+                </div>
+                <div class="card">
+                    <h3>Web Design e UI</h3>
+                    <p>Transições CSS de opacidade (opacity) e opacidade em componentes para criar interfaces suaves e agradáveis à navegação.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referências -->
+    <section id="referencias" class="container">
+        <h2>Referências e Embasamento Científico</h2>
+        <ul class="ref-list">
+            <li><strong>ANSI/ASA S1.1-2013:</strong> Acoustical Terminology - Padrões de medição de pressão sonora e percepção logarítmica.</li>
+            <li><strong>Goldstein, E. B. (2019):</strong> Sensation and Perception. Cengage Learning. (Fundamentos sobre adaptação visual e auditiva humana).</li>
+            <li><strong>Murch, Walter (2001):</strong> In the Blink of an Eye: A Perspective on Film Editing. Silman-James Press. (Análise sobre cortes, fades e a cognição do espectador).</li>
+            <li><strong>Wightman, F. L., & Kistler, D. J. (1989):</strong> Headphone simulation of free-field listening. Journal of the Acoustical Society of America.</li>
+        </ul>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 FadeLab. Desenvolvido para fins educativos e compatível com GitHub Pages.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
