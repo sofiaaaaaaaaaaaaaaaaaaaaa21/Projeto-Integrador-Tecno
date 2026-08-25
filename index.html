@@ -18,7 +18,7 @@
             <a href="#inicio">Início</a>
             <a href="#conceito">Conceito</a>
             <a href="#ciencia">Base Científica</a>
-            <a href="#simulador">Simulador Interativo</a>
+            <a href="#simulador">Simulador Visual</a>
             <a href="#exemplos">Aplicações</a>
             <a href="#referencias">Referências</a>
         </nav>
@@ -33,22 +33,22 @@
     <section id="inicio" class="hero">
         <div class="hero-content">
             <h1>A Ciência por trás do Fade In e Fade Out</h1>
-            <p>Descubra como a transição suave de áudio e vídeo molda nossa percepção sensorial, cognitiva e cinematográfica.</p>
+            <p>Descubra como a transição visual suave molda nossa percepção óptica, cognitiva e cinematográfica.</p>
             <a href="#simulador" class="btn-primary">Testar Simulador</a>
         </div>
     </section>
 
     <!-- O Conceito -->
     <section id="conceito" class="container">
-        <h2>O que são Fade In e Fade Out?</h2>
+        <h2>O que é Fade In e Fade Out?</h2>
         <div class="grid-2">
             <div class="card">
                 <h3>Fade In</h3>
-                <p>Consiste no surgimento gradual de um sinal (seja áudio, aumentando do silêncio ao volume máximo, ou vídeo, transicionando do preto total para a imagem nítida). É o mecanismo de introdução que prepara os sentidos do espectador.</p>
+                <p>Consiste no surgimento gradual de um elemento visual (transicionando do preto total ou opacidade zero para a imagem nítida). É o mecanismo clássico para introduzir cenas sem causar impacto visual brusco.</p>
             </div>
             <div class="card">
                 <h3>Fade Out</h3>
-                <p>É o oposto complementar: a diminuição gradual de um sinal até a ausência completa (silêncio total ou tela preta). Serve para finalizar cenas, encerrar músicas ou indicar fechamento de ciclos cognitivos.</p>
+                <p>É o oposto complementar: a diminuição gradual da opacidade até a ausência completa (geralmente revelando o preto absoluto). Serve para finalizar cenas, indicar transição temporal ou fechamento de ciclos cognitivos.</p>
             </div>
         </div>
     </section>
@@ -57,16 +57,16 @@
     <section id="ciencia" class="bg-alt">
         <div class="container">
             <h2>Profundidade e Coerência Científica</h2>
-            <p class="subtitle">O impacto dos fades não é apenas estético; ele está enraizado na neurociência e na física.</p>
+            <p class="subtitle">O impacto dos fades visuais está diretamente ligado à neurofisiologia da visão e à adaptação retiniana.</p>
             
             <div class="science-grid">
                 <div class="science-item">
-                    <h4>Psicoacústica e Curvas Logarítmicas</h4>
-                    <p>O ouvido humano percebe o volume sonoro de forma logarítmica (escala decibel), e não linear. Um fade de áudio realista utiliza curvas exponenciais/logarítmicas para que a variação pareça linear ao cérebro, evitando saltos bruscos na audição.</p>
+                    <h4>Adaptação Retiniana e Células Fotorreceptoras</h4>
+                    <p>Mudanças drásticas e repentinas de luminosidade exigem uma adaptação complexa dos bastonetes e cones. O fade out/in atenua o choque luminoso, permitindo que o sistema visual processe a variação gradual sem fadiga imediata.</p>
                 </div>
                 <div class="science-item">
-                    <h4>Adaptação Visual e Ritmo Cardíaco</h4>
-                    <p>Na óptica e neurociência cognitiva, transições suaves (como o fade para o preto) dão tempo para o córtex visual se adaptar à mudança de estímulo, evitando respostas de sobressalto (startle reflex) que ocorrem com cortes secos abruptos.</p>
+                    <h4>Círculo Cognitivo e Resposta de Sobressalto</h4>
+                    <p>Na cinematografia, cortes secos abruptos ativam o reflexo de sobressalto (startle reflex) no sistema nervoso autônomo. Transições suaves via fade dão tempo para o córtex visual processar a mudança de contexto de forma fluida.</p>
                 </div>
             </div>
         </div>
@@ -74,22 +74,18 @@
 
     <!-- Simulador Interativo -->
     <section id="simulador" class="container">
-        <h2>Simulador Interativo de Fade</h2>
-        <p>Ajuste os controles abaixo para testar o comportamento visual e sonoro de um Fade In/Out simulado em tempo real.</p>
+        <h2>Simulador Visual Interativo</h2>
+        <p>Ajuste o controle deslizante ou use os botões para testar o comportamento do Fade In e Fade Out em tempo real.</p>
         
         <div class="simulator-box">
             <div class="screen-preview" id="screenPreview">
-                <span id="previewText">Visualização Ativa</span>
+                <span id="previewText">Cena Visual Ativa</span>
             </div>
             
             <div class="controls-grid">
                 <div class="control-group">
-                    <label for="opacityRange">Opacidade (Fade Visual): <span id="opacityVal">100</span>%</label>
+                    <label for="opacityRange">Opacidade Visual: <span id="opacityVal">100</span>%</label>
                     <input type="range" id="opacityRange" min="0" max="100" value="100">
-                </div>
-                <div class="control-group">
-                    <label for="volumeRange">Volume (Fade Sonoro): <span id="volumeVal">100</span>%</label>
-                    <!--<input type="range" id="volumeRange" min="0" max="100" value="100">-->
                 </div>
             </div>
             
@@ -107,16 +103,16 @@
             <h2>Exemplos de Aplicação no Mundo Real</h2>
             <div class="grid-3">
                 <div class="card">
-                    <h3>Cinema e TV</h3>
-                    <p>Usado no início de filmes (fade in a partir do preto) para sinalizar o início da narrativa e o desligamento do mundo real pelo espectador.</p>
+                    <h3>Cinema e Direção de Arte</h3>
+                    <p>Utilizado para marcar passagens de tempo consideráveis ou mudanças dramáticas de ambientação entre cenas distintas.</p>
                 </div>
                 <div class="card">
-                    <h3>Engenharia de Som</h3>
-                    <p>Aplicado em bordas de cortes de áudio (crossfades) para eliminar estalos elétricos e transições secas indesejadas (clicks and pops).</p>
+                    <h3>Web Design e UI/UX</h3>
+                    <p>Empregado em animações de elementos de interface (CSS transitions de opacidade) para criar menus, modais e tooltips elegantes.</p>
                 </div>
                 <div class="card">
-                    <h3>Web Design e UI</h3>
-                    <p>Transições CSS de opacidade (opacity) e opacidade em componentes para criar interfaces suaves e agradáveis à navegação.</p>
+                    <h3>Fotografia e Pós-Produção</h3>
+                    <p>Técnicas de transição de imagens em exposições duplas e montagens visuais complexas para criar conexões temáticas.</p>
                 </div>
             </div>
         </div>
@@ -126,10 +122,9 @@
     <section id="referencias" class="container">
         <h2>Referências e Embasamento Científico</h2>
         <ul class="ref-list">
-            <li><strong>ANSI/ASA S1.1-2013:</strong> Acoustical Terminology - Padrões de medição de pressão sonora e percepção logarítmica.</li>
-            <li><strong>Goldstein, E. B. (2019):</strong> Sensation and Perception. Cengage Learning. (Fundamentos sobre adaptação visual e auditiva humana).</li>
-            <li><strong>Murch, Walter (2001):</strong> In the Blink of an Eye: A Perspective on Film Editing. Silman-James Press. (Análise sobre cortes, fades e a cognição do espectador).</li>
-            <li><strong>Wightman, F. L., & Kistler, D. J. (1989):</strong> Headphone simulation of free-field listening. Journal of the Acoustical Society of America.</li>
+            <li><strong>Goldstein, E. B. (2019):</strong> Sensation and Perception. Cengage Learning. (Fundamentos sobre adaptação visual, cones, bastonetes e resposta retiniana).</li>
+            <li><strong>Murch, Walter (2001):</strong> In the Blink of an Eye: A Perspective on Film Editing. Silman-James Press. (Análise sobre cortes visuais, fades e a cognição do espectador).</li>
+            <li><strong>Bordwell, D., & Thompson, K. (2020):</strong> Film Art: An Introduction. McGraw-Hill Education. (Estudo sobre sintaxe visual e transições de tela).</li>
         </ul>
     </section>
 
