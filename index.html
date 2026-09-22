@@ -14,7 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* SIMULADOR */
+        /* =========================================
+           SIMULADOR
+        ========================================= */
 
         .screen-preview {
             width: 100%;
@@ -36,8 +38,8 @@
             object-fit: contain;
             display: block;
 
-            /* A imagem começa invisível */
-            opacity: 0;
+            /* A imagem começa com opacidade 0 */
+            opacity: 0 !important;
         }
 
         #opacityRange {
@@ -61,7 +63,10 @@
 
 <body>
 
-    <!-- MENU -->
+    <!-- =========================================
+         MENU
+    ========================================= -->
+
     <header class="navbar">
 
         <div class="logo">
@@ -69,24 +74,36 @@
         </div>
 
         <nav class="nav-links" id="navLinks">
+
             <a href="#inicio">Início</a>
+
             <a href="#conceito">Conceito</a>
+
             <a href="#ciencia">Base Científica</a>
+
             <a href="#simulador">Simulador Visual</a>
+
             <a href="#exemplos">Aplicações</a>
+
             <a href="#referencias">Referências</a>
+
         </nav>
 
         <div class="menu-toggle" id="menuToggle">
+
             <span></span>
             <span></span>
             <span></span>
+
         </div>
 
     </header>
 
 
-    <!-- INÍCIO -->
+    <!-- =========================================
+         INÍCIO
+    ========================================= -->
+
     <section id="inicio" class="hero">
 
         <div class="hero-content">
@@ -107,7 +124,10 @@
     </section>
 
 
-    <!-- CONCEITO -->
+    <!-- =========================================
+         CONCEITO
+    ========================================= -->
+
     <section id="conceito" class="container">
 
         <h2>O que é Fade In e Fade Out?</h2>
@@ -143,7 +163,10 @@
     </section>
 
 
-    <!-- CIÊNCIA -->
+    <!-- =========================================
+         CIÊNCIA
+    ========================================= -->
+
     <section id="ciencia" class="bg-alt">
 
         <div class="container">
@@ -190,7 +213,10 @@
     </section>
 
 
-    <!-- SIMULADOR -->
+    <!-- =========================================
+         SIMULADOR
+    ========================================= -->
+
     <section id="simulador" class="container">
 
         <h2>Simulador Visual Interativo</h2>
@@ -203,6 +229,7 @@
         <div class="simulator-box">
 
             <!-- IMAGEM -->
+
             <div class="screen-preview">
 
                 <img
@@ -214,11 +241,15 @@
 
 
             <!-- CONTROLE DE OPACIDADE -->
+
             <div class="control-group">
 
                 <label for="opacityRange">
+
                     Opacidade:
+
                     <span id="opacityVal">0</span>%
+
                 </label>
 
                 <input
@@ -232,24 +263,31 @@
 
 
             <!-- BOTÕES -->
+
             <div class="action-buttons">
 
                 <button
                     id="btnFadeIn"
                     class="btn-action">
+
                     Fade In
+
                 </button>
 
                 <button
                     id="btnFadeOut"
                     class="btn-action">
+
                     Fade Out
+
                 </button>
 
                 <button
                     id="btnReset"
                     class="btn-secondary">
+
                     Resetar
+
                 </button>
 
             </div>
@@ -259,7 +297,10 @@
     </section>
 
 
-    <!-- APLICAÇÕES -->
+    <!-- =========================================
+         APLICAÇÕES
+    ========================================= -->
+
     <section id="exemplos" class="bg-alt">
 
         <div class="container">
@@ -313,7 +354,10 @@
     </section>
 
 
-    <!-- REFERÊNCIAS -->
+    <!-- =========================================
+         REFERÊNCIAS
+    ========================================= -->
+
     <section id="referencias" class="container">
 
         <h2>Referências e Embasamento Científico</h2>
@@ -340,7 +384,10 @@
     </section>
 
 
-    <!-- RODAPÉ -->
+    <!-- =========================================
+         RODAPÉ
+    ========================================= -->
+
     <footer>
 
         <p>
@@ -352,40 +399,87 @@
     </footer>
 
 
-    <!-- JAVASCRIPT DO SIMULADOR -->
+    <!-- =========================================
+         JAVASCRIPT DO SIMULADOR
+    ========================================= -->
+
     <script>
 
+        /* ELEMENTOS */
+
         const img = document.getElementById("previewImage");
+
         const range = document.getElementById("opacityRange");
+
         const value = document.getElementById("opacityVal");
 
-        let fadeInterval;
+        let fadeInterval = null;
 
 
-        /* FUNÇÃO PARA ALTERAR A OPACIDADE */
+        /* =========================================
+           FUNÇÃO DE OPACIDADE
+        ========================================= */
 
         function setOpacity(n) {
 
             n = Number(n);
 
-            /* Limita o valor entre 0 e 100 */
+            /* Garante que fique entre 0 e 100 */
+
             n = Math.max(0, Math.min(100, n));
 
-            img.style.opacity = n / 100;
+
+            /*
+             * Converte:
+             *
+             * 0   = 0%
+             * 50  = 50%
+             * 100 = 100%
+             */
+
+            const opacityValue = n / 100;
+
+
+            /*
+             * O !important é aplicado pelo JavaScript
+             * para impedir que o style.css sobrescreva
+             * a opacidade da imagem.
+             */
+
+            img.style.setProperty(
+                "opacity",
+                opacityValue,
+                "important"
+            );
+
+
+            /* Atualiza o slider */
 
             range.value = n;
+
+
+            /* Atualiza o texto */
 
             value.textContent = n;
 
         }
 
 
-        /* IMAGEM COMEÇA COM OPACIDADE 0 */
+        /* =========================================
+           OPACIDADE INICIAL
+        ========================================= */
+
+        /*
+         * Assim que a página carregar,
+         * a imagem ficará 100% invisível.
+         */
 
         setOpacity(0);
 
 
-        /* CONTROLE PELO SLIDER */
+        /* =========================================
+           SLIDER
+        ========================================= */
 
         range.addEventListener("input", function() {
 
@@ -396,7 +490,9 @@
         });
 
 
-        /* FADE IN */
+        /* =========================================
+           FADE IN
+        ========================================= */
 
         document
             .getElementById("btnFadeIn")
@@ -406,7 +502,11 @@
 
                 let n = 0;
 
+
+                /* Começa obrigatoriamente em 0% */
+
                 setOpacity(0);
+
 
                 fadeInterval = setInterval(function() {
 
@@ -414,9 +514,12 @@
 
                     n++;
 
+
                     if (n > 100) {
 
                         clearInterval(fadeInterval);
+
+                        setOpacity(100);
 
                     }
 
@@ -425,7 +528,9 @@
             });
 
 
-        /* FADE OUT */
+        /* =========================================
+           FADE OUT
+        ========================================= */
 
         document
             .getElementById("btnFadeOut")
@@ -435,7 +540,11 @@
 
                 let n = 100;
 
+
+                /* Começa obrigatoriamente em 100% */
+
                 setOpacity(100);
+
 
                 fadeInterval = setInterval(function() {
 
@@ -443,9 +552,12 @@
 
                     n--;
 
+
                     if (n < 0) {
 
                         clearInterval(fadeInterval);
+
+                        setOpacity(0);
 
                     }
 
@@ -454,7 +566,9 @@
             });
 
 
-        /* RESETAR */
+        /* =========================================
+           RESETAR
+        ========================================= */
 
         document
             .getElementById("btnReset")
@@ -462,12 +576,18 @@
 
                 clearInterval(fadeInterval);
 
+                /*
+                 * Resetar volta a imagem para 100%.
+                 */
+
                 setOpacity(100);
 
             });
 
 
-        /* MENU MOBILE */
+        /* =========================================
+           MENU MOBILE
+        ========================================= */
 
         const menuToggle =
             document.getElementById("menuToggle");
@@ -490,3 +610,4 @@
 
 </body>
 </html>
+```
